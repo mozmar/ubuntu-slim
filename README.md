@@ -1,4 +1,3 @@
-
 Small Ubuntu 16.04 docker image
 
 The size of this image is ~60MB (less than half than `ubuntu:16.04).
@@ -21,3 +20,5 @@ This is possible by the removal of packages that are not required in a container
 - udev
 - util-linux
 - bash
+
+This was created as a subtree split from https://github.com/kubernetes/contrib/tree/master/images/ubuntu-slim with `git subtree split --prefix=images/ubuntu-slim -b ubuntu-slim`.
