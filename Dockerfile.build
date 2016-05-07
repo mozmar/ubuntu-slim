@@ -24,6 +24,8 @@ RUN sed -i 's/bash/sh/g' /etc/passwd
 
 WORKDIR /usr/share
 
+RUN apt-get install -y --no-install-recommends python python-pip
+
 RUN tar -czf copyrights.tar.gz common-licenses doc/*/copyright
 
 RUN apt-get clean -y && \
@@ -31,7 +33,7 @@ RUN apt-get clean -y && \
     tar -rf copyrights.tar doc/*/copyright && \
     gzip copyrights.tar && \
     rm -rf \
-        doc \
+        doc/* \
         man \
         info \
         locale \
@@ -40,6 +42,7 @@ RUN apt-get clean -y && \
         /var/cache/debconf/* \
         common-licenses \
         ~/.bashrc \
+        /etc/systemd/system \
         /etc/systemd \
         /lib/lsb \
         /lib/udev

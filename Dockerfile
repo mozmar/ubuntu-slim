@@ -1,5 +1,5 @@
 FROM scratch
 
-ADD rootfs.tar /
+ADD rootfs-python.tar /
 
 CMD ["/bin/sh"]
